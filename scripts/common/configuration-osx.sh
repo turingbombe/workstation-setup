@@ -21,6 +21,8 @@ defaults write com.apple.finder '_FXShowPosixPathInTitle' -bool true
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 #to revert use defaults -currentHost delete com.apple.ImageCapture disableHotPlug
 
+# turn off Spotlight
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 
 # modify appearance of dock: remove standard icons, add chrome and iTerm
 curl https://raw.githubusercontent.com/kcrawford/dockutil/master/scripts/dockutil > /usr/local/bin/dockutil
